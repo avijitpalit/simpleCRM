@@ -1,0 +1,46 @@
+<div class="container my-3">
+    <div class="card p-3 shadow-sm">
+        <h3>Add Account</h3>
+        <form #addAccountForm="ngForm" (submit)="addAccount(addAccountForm)">
+            <p>
+                <select name="customer" class="form-control" [(ngModel)]="selectedCustomer" required>
+                    <option value="0">Select Customer</option>
+                    <option *ngFor="let customer of customers" value="{{customer.Customer_ID}}">ID: {{customer.Customer_ID}}, {{customer.Customer_Name}}</option>
+                </select>
+            </p>
+            <p><input class="form-control" type="text" name="accountType" placeholder='Account Type' ngModel required></p>
+            <p><input class='form-control' type="number" name="accountOutstanding" placeholder='Account Oustanding' ngModel required></p>
+            <p><button type="submit" class="btn btn-success">Add Account</button></p>
+        </form>
+    </div>  
+</div>
+
+<div class="container mb-3">
+    <div class="card p-3">
+        <h3>View Customer Account</h3>
+        <form class="d-flex" #viewAccountsForm="ngForm" (submit)="viewAccounts(viewAccountsForm)">
+            <select name="customer" class="form-control" #selected="ngModel" [(ngModel)]="selectedValue" required>
+                <option value="0">Select Customer</option>
+                <option *ngFor="let customer of customers" value="{{customer.Customer_ID}}">ID: {{customer.Customer_ID}}, {{customer.Customer_Name}}</option>
+            </select>
+            <button class="btn btn-primary" style="width: 200px; margin-left: 5px;">View Accounts</button>
+        </form>
+        <table class="table table-bordered mt-3">
+            <thead style='background: #0001;'>
+                <tr>
+                    <th>Account ID</th>
+                    <th>Account Type</th>
+                    <th>Account Outstanding</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let account of accounts">
+                    <td><span>{{account.Account_ID}}</span></td>
+                    <td><span>{{account.Account_Type}}</span></td>
+                    <td><span>{{account.Account_Outstanding}}</span></td>
+                    <td><a routerLink="/account/{{account.Account_ID}}" class="btn btn-primary">Update Account</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

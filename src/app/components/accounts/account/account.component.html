@@ -1,0 +1,12 @@
+<div class="container my-3">
+    <div class="card p-3 shadow-sm">
+        <h3>Update Account</h3>
+        <form (submit)='updateAccount()'>
+            <p><input type="text" name='custID' class="form-control" readonly [(ngModel)]="addAcc.custID"></p>
+            <p><input type="text" class="form-control" readonly name='custName' [(ngModel)]='addAcc.custName'></p>
+            <p><input type="text" class="form-control" required name='accType' [(ngModel)]='addAcc.accType'></p>
+            <p><input type="number" class="form-control" required name='accOutstanding' [(ngModel)]='addAcc.accOutstanding'></p>
+            <p><button type="submit" class="btn btn-success">Update Account</button></p>
+        </form>
+    </div>
+</div>

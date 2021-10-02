@@ -1,0 +1,9 @@
+<div class="container my-3">
+    <h3>Edit Customer</h3>
+    <div class="card p-3 shadow-sm">
+        <form #editCustomerForm='ngForm' (submit)='updateCustomer(editCustomerForm)'>
+            <p><input type="text" name='name' class="form-control" [(ngModel)]="customerName"></p>
+            <p><button type="submit" class="btn btn-success form-control" style="width: 200px;">Update Customer</button></p>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container my-3">
+    <div class="card p-3 shadow shadow-sm">
+        <h3>Add Customer</h3>
+        <form (submit)='addCustomer(addCustomerForm)' #addCustomerForm='ngForm'>
+            <p><input type="text" name='name' placeholder="Enter customer name" class="form-control" ngModel></p>
+            <p><button type="submit" class="btn btn-success form-control" style="width: 200px;">Add Customer</button></p>
+        </form>
+    </div>
+</div>
+<div class="container mt-4">
+    <table class="table table-bordered">
+        <thead style="background: #0001;" class="border">
+            <th><span>Customer ID</span></th>
+            <th><span>Customer Name</span></th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers">
+                <td><span>{{customer.Customer_ID}}</span></td>
+                <td><span>{{customer.Customer_Name}}</span></td>
+                <td><a routerLink="/customer/{{customer.Customer_ID}}" class="btn btn-success btn-sm">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+nav{
+    background: var(--color-bg);
+    padding: 10px;
+}
+nav a{
+    color: var(--color-text);
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    margin: 0 5px;
+    transition: all .3s;
+}
+nav a:hover,
+nav a:focus{
+    color: #fff;
+    transition: all .3s;
+}
+nav a.active{
+    background: var(--color-text);
+    color: var(--color-bg);
+}
